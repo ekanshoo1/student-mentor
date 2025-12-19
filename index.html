@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="hi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>StudyBoost — Awareness, Motivation & Tips</title>
+    <meta name="description"
+        content="StudyBoost — पढ़ाई के लिए awareness, motivation और आसान tips. Daily tips, study plans और success stories.">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="logo">SB</div>
+                <div>
+                    <h1>StudyBoost</h1>
+                    <div class="muted">Awareness • Motivation • Simple Tips</div>
+                </div>
+            </div>
+            <nav>
+                <a href="#awareness">Awareness</a>
+                <a href="#tips">Tips</a>
+                <a href="#planner">Plan</a>
+                <a href="#stories">Stories</a>
+                <div class="language-selector">
+                    <button class="lang-btn" title="हिंदी" onclick="setLanguage('hi')">🇮🇳</button>
+                    <button class="lang-btn" title="English" onclick="setLanguage('en')">🇬🇧</button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- HERO -->
+            <div class="hero">
+                <div class="hero-card">
+                    <h2>📚 Roz thoda padho — bada farq aayega</h2>
+                    <p class="muted">Small daily habits build big results. Yahan tumhe milega awareness, motivation, aur
+                        practical tips jo daily follow kar sakte ho.</p>
+                    <div class="cta-row">
+                        <button class="btn" id="getTipBtn">💡 Aaj ka Tip</button>
+                        <button class="ghost" id="learnBtn">📖 Study Awareness</button>
+                    </div>
+
+                    <section style="margin-top:20px">
+                        <div class="card">
+                            <div id="todaysTipCard">
+                                <div class="muted small">📌 Today's Tip</div>
+                                <div id="todaysTip" style="font-weight:600;margin-top:8px">Click 'Aaj ka Tip' to reveal
+                                    today's tip.</div>
+                                <div style="margin-top:10px;display:flex;gap:8px">
+                                    <button class="ghost" id="saveTipBtn">Save Tip (demo)</button>
+                                    <button class="ghost" id="clearSavedTipBtn">Clear Saved</button>
+                                </div>
+                            </div>
+
+                            <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.04)" />
+
+                            <div style="display:flex;justify-content:space-between;align-items:center">
+                                <div>
+                                    <div class="muted small">📊 Weekly Commitment</div>
+                                    <div style="font-weight:700;font-size:20px;color:var(--accent-light)"
+                                        id="weeklyHours">0 hours/week</div>
+                                </div>
+                                <div style="text-align:right">
+                                    <div class="muted small">⏱️ Set hours/day</div>
+                                    <input class="input" type="number" id="hoursPerDay" min="0" max="24" value="2">
+                                </div>
+                            </div>
+                            <div style="margin-top:16px;display:flex;gap:8px">
+                                <button class="btn" id="calcPlan">Plan Banao</button>
+                                <button class="ghost" id="resetPlan">Reset</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="tip-box">
+                    <h3>🌟 Daily Motivation</h3>
+                    <div id="quote" class="quote">"Consistency chhoti cheez hai, par asli magic wahi karti hai."</div>
+                    <div class="muted small" style="margin-top:12px">Quote rotate hota hai — roz naye quotes dekho! ✨
+                    </div>
+                    <a class="tip" id="subscribePseudo">Subscribe (Demo)</a>
+                </aside>
+            </div>
+
+            <!-- Awareness -->
+            <section id="awareness">
+                <h3>🧠 Study Awareness</h3>
+                <div class="grid cards-3" style="margin-top:10px">
+                    <div class="card">
+                        <h4>💤 Sleep aur Learning</h4>
+                        <div class="muted small">Neend consistent ho to memory consolidation strong hota hai. Raat ko
+                            7-9 ghante generally recommended.</div>
+                    </div>
+                    <div class="card">
+                        <h4>🎯 Active Recall</h4>
+                        <div class="muted small">Passive reading kam effective hota; khud se poochho aur likho — isse
+                            retention kaafi improve hota hai.</div>
+                    </div>
+                    <div class="card">
+                        <h4>⏸️ Breaks zaroori</h4>
+                        <div class="muted small">Pomodoro: 25 min padhai + 5 min break. Long sessions mein short breaks
+                            dimaag ko refresh karte hain.</div>
+                    </div>
+                </div>
+
+                <div id="studyAwarenessDetails" style="margin-top:16px;display:none">
+                    <div class="card">
+                        <h4>More on Study Awareness</h4>
+                        <ul class="muted small" style="margin-top:8px;line-height:1.6">
+                            <li><strong>Set goals:</strong> Chhote aur measurable goals set karo — clarity productivity
+                                badhata hai.</li>
+                            <li><strong>Active practice:</strong> Test yourself regularly; make short summaries.</li>
+                            <li><strong>Healthy routine:</strong> Hydration, light exercise and consistent sleep support
+                                learning.</li>
+                            <li><strong>Environment:</strong> Minimize distractions — phone on do-not-disturb, tidy
+                                study space.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tips -->
+            <section id="tips">
+                <h3>💡 Quick Tips</h3>
+                <div class="tips-grid" style="margin-top:10px">
+                    <div class="card"><b>1. Start small</b>
+                        <div class="muted small">Agar boring lage to 10 min se shuru karo.</div>
+                    </div>
+                    <div class="card"><b>2. One topic at a time</b>
+                        <div class="muted small">Switching cost high hota — single topic deep karo.</div>
+                    </div>
+                    <div class="card"><b>3. Practice tests</b>
+                        <div class="muted small">Old papers aur mock tests se speed aur accuracy badhti hai.</div>
+                    </div>
+                    <div class="card"><b>4. Teach someone</b>
+                        <div class="muted small">Agar tum kisi ko padha doge to tum khud aur ache se samjh paoge.</div>
+                    </div>
+                    <div class="card"><b>5. Minimal notes</b>
+                        <div class="muted small">Short handwritten notes ya flashcards banao.</div>
+                    </div>
+                    <div class="card"><b>6. Health first</b>
+                        <div class="muted small">Hydration aur light exercise focus badhate hain.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Planner -->
+            <section id="planner">
+                <h3>📋 Simple Study Planner</h3>
+                <div class="card planner" style="margin-top:10px">
+                    <div>
+                        <label class="muted small">📅 Din/Week padhne wale din (e.g., 6)</label><br>
+                        <input id="daysPerWeek" class="input" type="number" min="1" max="7" value="6">
+                    </div>
+                    <div>
+                        <label class="muted small">⏱️ Hours per day</label><br>
+                        <input id="hoursPerDay2" class="input" type="number" min="0" max="16" value="2">
+                    </div>
+                    <div style="min-width:220px">
+                        <div class="muted small">📊 Calculated weekly hours</div>
+                        <div id="calcResult" style="font-weight:700;font-size:16px;color:var(--accent-light)">0 hours
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn" id="generatePlan">Generate</button>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Study Schedule Builder -->
+            <section id="schedule-builder">
+                <h3> Personalized Study Schedule</h3>
+                <div class="card" style="margin-top:10px;padding:24px">
+                    <div style="margin-bottom:16px">
+                        <label class="muted small"><strong> Subjects/Topics</strong> (comma-separated, e.g., Math,
+                            Science, English)</label>
+                        <input id="schedulerSubjects" class="input" type="text" placeholder="Math, Science, English"
+                            style="width:100%;margin-top:8px">
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+                        <div>
+                            <label class="muted small"><strong> Total hours per week</strong></label>
+                            <input id="schedulerHours" class="input" type="number" min="1" max="60" value="10"
+                                style="margin-top:8px">
+                        </div>
+                        <div>
+                            <label class="muted small"><strong> Study days per week</strong></label>
+                            <input id="schedulerDays" class="input" type="number" min="1" max="7" value="5"
+                                style="margin-top:8px">
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom:16px">
+                        <label class="muted small"><strong> Goal</strong> (e.g., Exam prep, Daily learning)</label>
+                        <input id="schedulerGoal" class="input" type="text"
+                            placeholder="Exam prep, revision, skill building" style="width:100%;margin-top:8px">
+                    </div>
+
+                    <div style="display:flex;gap:8px">
+                        <button class="btn" id="generateScheduleBtn">Generate Schedule</button>
+                        <button class="ghost" id="clearScheduleBtn">Clear</button>
+                    </div>
+                </div>
+
+                <div id="scheduleOutput" style="margin-top:16px;display:none">
+                    <div class="card" style="padding:20px">
+                        <h4> Your Weekly Schedule</h4>
+                        <div id="scheduleContent" style="margin-top:12px;line-height:1.8;color:var(--muted)"></div>
+                        <button class="ghost" id="downloadScheduleBtn" style="margin-top:12px">Download
+                            Schedule</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Submit Success Story -->
+            <section id="submit-story">
+                <h3>📝 Share Your Success Story</h3>
+                <div class="card" style="margin-top:10px;padding:24px">
+                    <p class="muted small" style="margin-bottom:16px">Tumhara story hazaro students ko inspire kar sakta
+                        hai! 💪</p>
+                    <div style="margin-bottom:16px">
+                        <label class="muted small"><strong>Tumhara Naam</strong></label>
+                        <input id="storyName" class="input" type="text" placeholder="Apna naam likho"
+                            style="width:100%;margin-top:8px">
+                    </div>
+                    <div style="margin-bottom:16px">
+                        <label class="muted small"><strong>Achievement / Exam</strong></label>
+                        <input id="storyAchievement" class="input" type="text"
+                            placeholder="e.g., JEE Rank 500, State Topper" style="width:100%;margin-top:8px">
+                    </div>
+                    <div style="margin-bottom:16px">
+                        <label class="muted small"><strong>Apna Story (50-100 words)</strong></label>
+                        <textarea id="storyContent" class="input"
+                            placeholder="Likho ki tumne kya kiya aur kaise succeed ho gaye..."
+                            style="width:100%;margin-top:8px;min-height:100px;resize:vertical"></textarea>
+                    </div>
+                    <div style="display:flex;gap:8px">
+                        <button class="btn" id="submitStoryBtn">Share Story</button>
+                        <button class="ghost" id="clearStoryBtn">Clear</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stories -->
+            <section id="stories">
+                <h3>⭐ Success Stories</h3>
+                <div class="grid stories-grid" style="margin-top:10px">
+                    <div class="card test">
+                        <div class="avatar">A</div>
+                        <div>
+                            <div style="font-weight:700">Anita — Rank 2 in college</div>
+                            <div class="muted small">"Roz 2 ghante consistent padhai ne mujhe focus sikhaya. Pomodoro
+                                aur revision plan mera secret tha." 🏆</div>
+                        </div>
+                    </div>
+                    <div class="card test">
+                        <div class="avatar">R</div>
+                        <div>
+                            <div style="font-weight:700">Rohit — Competitive exam clear</div>
+                            <div class="muted small">"Practice tests se speed aur accuracy improve hui. Breaks lena mat
+                                bhoolna." 💪</div>
+                        </div>
+                    </div>
+                    <div class="card test">
+                        <div class="avatar">👨‍⚖️</div>
+                        <div>
+                            <div style="font-weight:700">Dr. B.R. Ambedkar — Father of Constitution</div>
+                            <div class="muted small">"Padhai aur education se hi samaj badal sakta hai. Bina shiksha ke
+                                azadi adhoori hai." 📚</div>
+                        </div>
+                    </div>
+                    <div class="card test">
+                        <div class="avatar">🚀</div>
+                        <div>
+                            <div style="font-weight:700">Dr. A.P.J. Abdul Kalam — Missile Man</div>
+                            <div class="muted small">"Sapne woh nahin hote jo nind mein aaye, sapne woh hote hain jo
+                                nind ud jaye. Padhai ke zariye dreams ko reality banao." 💫</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="userStoriesContainer" style="margin-top:24px">
+                    <h4 style="font-size:18px;margin-bottom:16px;color:var(--accent-light)">👥 Community Stories</h4>
+                    <div class="grid stories-grid" id="submittedStories"></div>
+                </div>
+    </div>
+    </section>
+
+    </main>
+
+    <!-- Feedback -->
+    <section id="feedback" style="margin-top:24px">
+        <h3>🗣️ Feedback — Improve StudyBoost</h3>
+        <div class="card" style="margin-top:10px;padding:20px">
+            <div style="margin-bottom:12px" class="muted small">Tumhara feedback website ko better banayega. Short and
+                honest likho.</div>
+            <div style="margin-bottom:10px">
+                <label class="muted small"><strong>Naam (optional)</strong></label>
+                <input id="fbName" class="input" type="text" placeholder="Apna naam (optional)"
+                    style="width:100%;margin-top:8px">
+            </div>
+            <div style="margin-bottom:10px;display:flex;gap:12px;align-items:center">
+                <div style="flex:1">
+                    <label class="muted small"><strong>Rating</strong></label>
+                    <select id="fbRating" class="input" style="width:100%;margin-top:8px">
+                        <option value="">Rate (1-5)</option>
+                        <option value="5">5 — Excellent</option>
+                        <option value="4">4 — Good</option>
+                        <option value="3">3 — Okay</option>
+                        <option value="2">2 — Needs work</option>
+                        <option value="1">1 — Bad</option>
+                    </select>
+                </div>
+                <div style="flex:2">
+                    <label class="muted small"><strong>Email (optional)</strong></label>
+                    <input id="fbEmail" class="input" type="email" placeholder="email@example.com"
+                        style="width:100%;margin-top:8px">
+                </div>
+            </div>
+            <div style="margin-bottom:12px">
+                <label class="muted small"><strong>Comments</strong></label>
+                <textarea id="fbComments" class="input" placeholder="Koi suggestion ya bug batao..."
+                    style="width:100%;margin-top:8px;min-height:80px;resize:vertical"></textarea>
+            </div>
+            <div style="display:flex;gap:8px">
+                <button class="btn" id="submitFeedbackBtn">Send Feedback</button>
+                <button class="ghost" id="clearFeedbackBtn">Clear</button>
+            </div>
+        </div>
+
+        <div id="feedbackList" style="margin-top:16px"></div>
+    </section>
+
+    <footer>
+        <div>
+            <div style="font-weight:700;font-size:16px;color:var(--accent-light)">📚 StudyBoost</div>
+            <div class="muted small">Copyright © StudyBoost — Built for students with 💖</div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center">
+            <input id="emailSub" class="input" placeholder="Email (demo)">
+            <button class="btn" id="subBtn">Subscribe</button>
+        </div>
+    </footer>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbotContainer" class="chatbot-container">
+        <div class="chatbot-header">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <div class="chatbot-avatar">A</div>
+                <div>
+                    <div style="font-weight: 700;">Anek</div>
+                    <div style="font-size: 12px; opacity: 0.8;">Always here to help!</div>
+                </div>
+            </div>
+            <button id="closeChatbot" class="chatbot-close">✕</button>
+        </div>
+
+        <div class="chatbot-messages" id="chatMessages"></div>
+
+        <!-- Typing indicator with animation -->
+        <div id="chatTyping" class="chatbot-typing">
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+        </div>
+
+        <div class="chatbot-input-area">
+            <input id="chatInput" class="chatbot-input" type="text" placeholder="Ask Anek anything...">
+            <button id="sendBtn" class="chatbot-send">Send</button>
+        </div>
+    </div>
+
+    <!-- Chatbot Toggle Button -->
+    <button id="chatbotToggle" class="chatbot-toggle">💬 Anek</button>
+
+    <script src="languages.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
